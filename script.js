@@ -1,66 +1,91 @@
-// Smooth scrolling for navigation links
+// Modal Functions
+function openModal(modalId) {
+    document.getElementById(modalId).style.display = 'block';
+}
+
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = 'none';
+}
+
+function switchModal(fromModalId, toModalId) {
+    closeModal(fromModalId);
+    openModal(toModalId);
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    if (event.target.classList.contains('modal')) {
+        event.target.style.display = 'none';
+    }
+};
+
+// Form Submissions
+document.getElementById('loginForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Login successful! Redirecting to dashboard...');
+    window.location.href = 'dashboard.html';
+});
+
+document.getElementById('signupForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Account created successfully! Redirecting to dashboard...');
+    window.location.href = 'dashboard.html';
+});
+
+// Smooth Scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#' && document.querySelector(href)) {
+            e.preventDefault();
+            document.querySelector(href).scrollIntoView({
+                behavior: 'smooth'
             });
         }
     });
 });
 
-// Add active class to navigation link based on scroll position
-window.addEventListener('scroll', () => {
-    let current = '';
-    const sections = document.querySelectorAll('section');
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute('id');
-        }
-    });
+// Logout Function
+function logout() {
+    if (confirm('Are you sure you want to logout?')) {
+        window.location.href = 'index.html';
+    }
+}
 
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').slice(1) === current) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// Add fade-in animation when elements come into view
+// Animation on Scroll
 const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
+    rootMargin: '0px 0px -50px 0px'
 };
 
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.style.animation = 'fadeInUp 0.6s ease-out';
             observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-document.querySelectorAll('.project-card, .blog-card, .skill-category').forEach(element => {
-    element.style.opacity = '0';
-    element.style.transform = 'translateY(20px)';
-    element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    observer.observe(element);
+const animationStyle = document.createElement('style');
+animationStyle.textContent = `
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+`;
+document.head.appendChild(animationStyle);
+
+// Observe elements
+document.querySelectorAll('.feature-card, .course-card, .testimonial-card, .team-member, .value-card').forEach(el => {
+    el.style.opacity = '0';
+    observer.observe(el);
 });
 
-// Form submission (if you add a contact form later)
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Thank you for your message! I will get back to you soon.');
-        this.reset();
-    });
-}
+console.log('EduHub Portal loaded successfully!');

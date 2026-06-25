@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - EduHub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">🎓 EduHub</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <button class="btn-logout" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="user-profile">
+                <div class="user-avatar">👨‍🎓</div>
+                <h3>John Doe</h3>
+                <p>john@example.com</p>
+            </div>
+            <nav class="dashboard-nav">
+                <a href="#" class="nav-item active" onclick="switchTab('overview')">📊 Overview</a>
+                <a href="#" class="nav-item" onclick="switchTab('courses')">📚 My Courses</a>
+                <a href="#" class="nav-item" onclick="switchTab('assignments')">📝 Assignments</a>
+                <a href="#" class="nav-item" onclick="switchTab('grades')">📈 Grades</a>
+                <a href="#" class="nav-item" onclick="switchTab('certificates')">🏆 Certificates</a>
+                <a href="#" class="nav-item" onclick="switchTab('messages')">💬 Messages</a>
+                <a href="#" class="nav-item" onclick="switchTab('settings')">⚙️ Settings</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Overview Tab -->
+            <div id="overview" class="tab-content active">
+                <h1>Welcome Back, John!</h1>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <h3>5</h3>
+                        <p>Courses Enrolled</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>78%</h3>
+                        <p>Average Progress</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>3.8</h3>
+                        <p>GPA</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>2</h3>
+                        <p>Certificates Earned</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-section">
+                    <h2>Ongoing Courses</h2>
+                    <div class="courses-list">
+                        <div class="course-item">
+                            <div class="course-header">
+                                <h3>Web Development Bootcamp</h3>
+                                <span class="progress-badge">75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 75%"></div>
+                            </div>
+                            <p>5 lessons remaining • Next lesson in 2 days</p>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-header">
+                                <h3>Advanced Mathematics</h3>
+                                <span class="progress-badge">60%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 60%"></div>
+                            </div>
+                            <p>8 lessons remaining • Next lesson tomorrow</p>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-header">
+                                <h3>English Literature</h3>
+                                <span class="progress-badge">90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 90%"></div>
+                            </div>
+                            <p>1 lesson remaining • Final exam in 5 days</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-section">
+                    <h2>Upcoming Deadlines</h2>
+                    <div class="deadlines-list">
+                        <div class="deadline-item urgent">
+                            <span class="due-date">Today</span>
+                            <div>
+                                <h4>Web Dev Project Submission</h4>
+                                <p>Submit your final project</p>
+                            </div>
+                        </div>
+                        <div class="deadline-item">
+                            <span class="due-date">2 days</span>
+                            <div>
+                                <h4>Math Assignment #5</h4>
+                                <p>Complete problem set 1-50</p>
+                            </div>
+                        </div>
+                        <div class="deadline-item">
+                            <span class="due-date">5 days</span>
+                            <div>
+                                <h4>English Literature Essay</h4>
+                                <p>Analysis of Shakespeare</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Courses Tab -->
+            <div id="courses" class="tab-content">
+                <h1>My Courses</h1>
+                <div class="courses-grid">
+                    <div class="course-card-full">
+                        <div class="course-image">🖥️</div>
+                        <h3>Web Development</h3>
+                        <p>Master modern web technologies</p>
+                        <div class="course-meta">
+                            <span>Instructor: Jane Doe</span>
+                            <span>Enrolled: 3 months ago</span>
+                        </div>
+                        <button class="btn-secondary">Continue</button>
+                    </div>
+                    <div class="course-card-full">
+                        <div class="course-image">🔢</div>
+                        <h3>Advanced Math</h3>
+                        <p>Calculus, algebra & statistics</p>
+                        <div class="course-meta">
+                            <span>Instructor: Dr. Smith</span>
+                            <span>Enrolled: 2 months ago</span>
+                        </div>
+                        <button class="btn-secondary">Continue</button>
+                    </div>
+                    <div class="course-card-full">
+                        <div class="course-image">📖</div>
+                        <h3>English Literature</h3>
+                        <p>Classic & contemporary works</p>
+                        <div class="course-meta">
+                            <span>Instructor: Prof. Johnson</span>
+                            <span>Enrolled: 1 month ago</span>
+                        </div>
+                        <button class="btn-secondary">Continue</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Assignments Tab -->
+            <div id="assignments" class="tab-content">
+                <h1>My Assignments</h1>
+                <div class="assignments-list">
+                    <div class="assignment-card pending">
+                        <h3>Web Dev Final Project</h3>
+                        <p>Build a complete e-commerce website</p>
+                        <div class="assignment-footer">
+                            <span class="status">Due Today</span>
+                            <button class="btn-secondary">Submit Work</button>
+                        </div>
+                    </div>
+                    <div class="assignment-card pending">
+                        <h3>Math Problem Set #5</h3>
+                        <p>Solve problems 1-50 from chapter 5</p>
+                        <div class="assignment-footer">
+                            <span class="status">Due in 2 days</span>
+                            <button class="btn-secondary">View Details</button>
+                        </div>
+                    </div>
+                    <div class="assignment-card completed">
+                        <h3>English Essay - Shakespeare</h3>
+                        <p>Analysis of Hamlet's character</p>
+                        <div class="assignment-footer">
+                            <span class="status">Submitted ✓</span>
+                            <button class="btn-secondary">View Feedback</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grades Tab -->
+            <div id="grades" class="tab-content">
+                <h1>My Grades</h1>
+                <div class="grades-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Course</th>
+                                <th>Assessment</th>
+                                <th>Score</th>
+                                <th>Grade</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Web Development</td>
+                                <td>Midterm Exam</td>
+                                <td>88/100</td>
+                                <td>A</td>
+                                <td>2024-06-10</td>
+                            </tr>
+                            <tr>
+                                <td>Advanced Math</td>
+                                <td>Quiz 3</td>
+                                <td>92/100</td>
+                                <td>A+</td>
+                                <td>2024-06-12</td>
+                            </tr>
+                            <tr>
+                                <td>English Literature</td>
+                                <td>Essay</td>
+                                <td>85/100</td>
+                                <td>B+</td>
+                                <td>2024-06-08</td>
+                            </tr>
+                            <tr>
+                                <td>Physics 101</td>
+                                <td>Lab Report</td>
+                                <td>90/100</td>
+                                <td>A</td>
+                                <td>2024-06-05</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Certificates Tab -->
+            <div id="certificates" class="tab-content">
+                <h1>My Certificates</h1>
+                <div class="certificates-grid">
+                    <div class="certificate-card">
+                        <div class="certificate-icon">🏆</div>
+                        <h3>Web Development Bootcamp</h3>
+                        <p>Completed on June 15, 2024</p>
+                        <button class="btn-secondary">Download</button>
+                    </div>
+                    <div class="certificate-card">
+                        <div class="certificate-icon">🎯</div>
+                        <h3>JavaScript Mastery</h3>
+                        <p>Completed on May 20, 2024</p>
+                        <button class="btn-secondary">Download</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Messages Tab -->
+            <div id="messages" class="tab-content">
+                <h1>Messages</h1>
+                <div class="messages-list">
+                    <div class="message-item unread">
+                        <div class="message-avatar">👨‍🏫</div>
+                        <div class="message-content">
+                            <h4>Prof. Jane Doe</h4>
+                            <p>Great work on your latest assignment! Keep it up.</p>
+                            <span class="message-time">2 hours ago</span>
+                        </div>
+                    </div>
+                    <div class="message-item">
+                        <div class="message-avatar">👩‍🎓</div>
+                        <div class="message-content">
+                            <h4>Sarah - Study Group</h4>
+                            <p>Are you joining the study session tonight?</p>
+                            <span class="message-time">5 hours ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div id="settings" class="tab-content">
+                <h1>Account Settings</h1>
+                <div class="settings-form">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" value="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" value="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="tel" value="+1 (555) 123-4567">
+                    </div>
+                    <div class="form-group">
+                        <label>Biography</label>
+                        <textarea>Student passionate about learning new technologies</textarea>
+                    </div>
+                    <button class="btn-primary">Save Changes</button>
+                    <button class="btn-secondary" style="margin-left: 10px;">Change Password</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

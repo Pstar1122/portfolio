@@ -3,54 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduHub - School Portal</title>
+    <title>EduHub - Complete School Portal</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <div class="nav-brand">EduHub</div>
+            <div class="nav-brand">🎓 EduHub</div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#courses">Courses</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="nav-buttons">
-                <button class="btn-login">Login</button>
-                <button class="btn-signup">Sign Up</button>
+                <button class="btn-login" onclick="openModal('loginModal')">Login</button>
+                <button class="btn-signup" onclick="openModal('signupModal')">Sign Up</button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section class="hero">
         <div class="hero-content">
             <h1>Welcome to EduHub</h1>
             <p>Your Complete School Portal Experience</p>
-            <button class="btn-primary">Get Started</button>
+            <p class="hero-subtitle">Access courses, track progress, connect with peers, and grow</p>
+            <button class="btn-primary" onclick="openModal('signupModal')">Get Started Now</button>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="features">
+    <section class="features">
         <div class="container">
             <h2>Why Choose EduHub?</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">📚</div>
-                    <h3>Access Courses</h3>
-                    <p>Browse and enroll in hundreds of courses from expert instructors.</p>
+                    <h3>Extensive Courses</h3>
+                    <p>Access 500+ courses from expert instructors across all subjects.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">👥</div>
-                    <h3>Connect with Students</h3>
-                    <p>Join a vibrant community of learners and collaborate on projects.</p>
+                    <h3>Community Learning</h3>
+                    <p>Connect with thousands of students and collaborate on projects.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📊</div>
-                    <h3>Track Progress</h3>
+                    <h3>Progress Tracking</h3>
                     <p>Monitor your academic progress with detailed analytics and reports.</p>
                 </div>
                 <div class="feature-card">
@@ -58,79 +60,209 @@
                     <h3>Earn Certificates</h3>
                     <p>Complete courses and earn recognized certificates for your portfolio.</p>
                 </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3>Flexible Schedule</h3>
+                    <p>Learn at your own pace with 24/7 access to all materials.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Personalized Path</h3>
+                    <p>AI-powered recommendations based on your learning goals.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Courses Section -->
-    <section id="courses" class="courses">
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stat-card">
+                <h3>50,000+</h3>
+                <p>Active Students</p>
+            </div>
+            <div class="stat-card">
+                <h3>500+</h3>
+                <p>Available Courses</p>
+            </div>
+            <div class="stat-card">
+                <h3>100+</h3>
+                <p>Expert Instructors</p>
+            </div>
+            <div class="stat-card">
+                <h3>95%</h3>
+                <p>Success Rate</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Courses Preview -->
+    <section class="courses-preview">
         <div class="container">
             <h2>Popular Courses</h2>
             <div class="courses-grid">
                 <div class="course-card">
                     <div class="course-image">🖥️</div>
                     <h3>Web Development</h3>
-                    <p>Learn HTML, CSS, JavaScript, and modern frameworks.</p>
-                    <span class="course-badge">Beginner</span>
+                    <p>Learn HTML, CSS, JavaScript, React, and Node.js</p>
+                    <div class="course-footer">
+                        <span class="course-badge">Beginner</span>
+                        <span class="course-students">2.5k students</span>
+                    </div>
                 </div>
                 <div class="course-card">
                     <div class="course-image">🔬</div>
                     <h3>Physics 101</h3>
-                    <p>Master the fundamentals of physics and mechanics.</p>
-                    <span class="course-badge">Intermediate</span>
+                    <p>Master fundamentals of physics and mechanics</p>
+                    <div class="course-footer">
+                        <span class="course-badge">Intermediate</span>
+                        <span class="course-students">1.8k students</span>
+                    </div>
                 </div>
                 <div class="course-card">
                     <div class="course-image">📖</div>
                     <h3>English Literature</h3>
-                    <p>Explore classic and contemporary literature.</p>
-                    <span class="course-badge">Beginner</span>
+                    <p>Explore classic and contemporary literature</p>
+                    <div class="course-footer">
+                        <span class="course-badge">Beginner</span>
+                        <span class="course-students">3.2k students</span>
+                    </div>
                 </div>
                 <div class="course-card">
                     <div class="course-image">🔢</div>
                     <h3>Advanced Mathematics</h3>
-                    <p>Deep dive into calculus, algebra, and statistics.</p>
-                    <span class="course-badge">Advanced</span>
+                    <p>Deep dive into calculus, algebra, and statistics</p>
+                    <div class="course-footer">
+                        <span class="course-badge">Advanced</span>
+                        <span class="course-students">1.2k students</span>
+                    </div>
                 </div>
-                <div class="course-card">
-                    <div class="course-image">🌍</div>
-                    <h3>World History</h3>
-                    <p>Journey through major historical events and periods.</p>
-                    <span class="course-badge">Intermediate</span>
+            </div>
+            <div class="text-center">
+                <a href="courses.html" class="btn-primary">View All Courses</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Students Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"EduHub completely transformed my learning experience. The courses are comprehensive and the community is incredibly supportive!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👨‍🎓</div>
+                        <div>
+                            <h4>John Smith</h4>
+                            <p>Computer Science Student</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="course-card">
-                    <div class="course-image">🧪</div>
-                    <h3>Chemistry Basics</h3>
-                    <p>Understand the elements and chemical reactions.</p>
-                    <span class="course-badge">Beginner</span>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"The instructors are experts in their field. I learned more in 3 months here than I did in a whole year elsewhere."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👩‍🎓</div>
+                        <div>
+                            <h4>Sarah Johnson</h4>
+                            <p>Mathematics Student</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Best investment I made in my education. The certificate helped me get my dream job!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👨‍💼</div>
+                        <div>
+                            <h4>Mike Davis</h4>
+                            <p>Recent Graduate</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <!-- CTA Section -->
+    <section class="cta">
         <div class="container">
-            <h2>Get In Touch</h2>
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit" class="btn-primary">Send Message</button>
-            </form>
+            <h2>Ready to Transform Your Education?</h2>
+            <p>Join thousands of students learning on EduHub today</p>
+            <button class="btn-primary" onclick="openModal('signupModal')">Start Free Today</button>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 EduHub. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#">Facebook</a>
-                <a href="#">Twitter</a>
-                <a href="#">Instagram</a>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>EduHub</h4>
+                    <p>Transforming education through technology and innovation.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">LinkedIn</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: info@eduhub.com</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EduHub. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Student Login</h2>
+            <form id="loginForm">
+                <input type="email" placeholder="Email Address" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn-primary">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" onclick="switchModal('loginModal', 'signupModal')">Sign up here</a></p>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('signupModal')">&times;</span>
+            <h2>Create Your Account</h2>
+            <form id="signupForm">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Confirm Password" required>
+                <label><input type="checkbox" required> I agree to the Terms & Conditions</label>
+                <button type="submit" class="btn-primary">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="#" onclick="switchModal('signupModal', 'loginModal')">Login here</a></p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

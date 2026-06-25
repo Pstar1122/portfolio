@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - EduHub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">🎓 EduHub</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="courses.html" class="active">Courses</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <button class="btn-login" onclick="openModal('loginModal')">Login</button>
+                <button class="btn-signup" onclick="openModal('signupModal')">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>All Courses</h1>
+            <p>Browse our extensive collection of courses</p>
+        </div>
+    </section>
+
+    <!-- Filters & Courses -->
+    <section class="courses-section">
+        <div class="container">
+            <div class="courses-wrapper">
+                <!-- Sidebar Filters -->
+                <aside class="courses-filter">
+                    <h3>Filter Courses</h3>
+                    
+                    <div class="filter-group">
+                        <label>Level</label>
+                        <div class="filter-options">
+                            <label><input type="checkbox"> Beginner</label>
+                            <label><input type="checkbox"> Intermediate</label>
+                            <label><input type="checkbox"> Advanced</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Category</label>
+                        <select>
+                            <option>All Categories</option>
+                            <option>Technology</option>
+                            <option>Science</option>
+                            <option>Mathematics</option>
+                            <option>Languages</option>
+                            <option>Arts</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Price Range</label>
+                        <input type="range" min="0" max="500" value="250">
+                        <p>Up to $<span id="priceValue">250</span></p>
+                    </div>
+
+                    <div class="filter-group">
+                        <label>Rating</label>
+                        <div class="filter-options">
+                            <label><input type="checkbox"> 4.5+ ⭐</label>
+                            <label><input type="checkbox"> 4.0+ ⭐</label>
+                            <label><input type="checkbox"> 3.5+ ⭐</label>
+                        </div>
+                    </div>
+
+                    <button class="btn-primary" style="width: 100%; margin-top: 20px;">Apply Filters</button>
+                </aside>
+
+                <!-- Courses Grid -->
+                <div class="courses-main">
+                    <div class="courses-toolbar">
+                        <input type="text" placeholder="Search courses..." class="search-input">
+                        <select class="sort-select">
+                            <option>Sort by: Latest</option>
+                            <option>Most Popular</option>
+                            <option>Highest Rated</option>
+                            <option>Lowest Price</option>
+                        </select>
+                    </div>
+
+                    <div class="all-courses-grid">
+                        <div class="course-card-large">
+                            <div class="course-image">🖥️</div>
+                            <h3>Web Development Bootcamp</h3>
+                            <p>Learn HTML, CSS, JavaScript, React, Node.js, and more</p>
+                            <div class="course-details">
+                                <span>👨‍🏫 Jane Doe</span>
+                                <span>⭐ 4.8 (450 reviews)</span>
+                                <span>👥 2,500+ students</span>
+                            </div>
+                            <div class="course-footer-large">
+                                <span class="course-price">$49</span>
+                                <button class="btn-secondary">Enroll Now</button>
+                            </div>
+                        </div>
+
+                        <div class="course-card-large">
+                            <div class="course-image">🔬</div>
+                            <h3>Physics 101: Mechanics</h3>
+                            <p>Master the fundamentals of physics and mechanics</p>
+                            <div class="course-details">
+                                <span>👨‍🏫 Dr. Smith</span>
+                                <span>⭐ 4.7 (320 reviews)</span>
+                                <span>👥 1,800+ students</span>
+                            </div>
+                            <div class="course-footer-large">
+                                <span class="course-price">$39</span>
+                                <button class="btn-secondary">Enroll Now</button>
+                            </div>
+                        </div>
+
+                        <div class="course-card-large">
+                            <div class="course-image">📖</div>
+                            <h3>English Literature Classics</h3>
+                            <p>Explore classic and contemporary literature</p>
+                            <div class="course-details">
+                                <span>👨‍🏫 Prof. Johnson</span>
+                                <span>⭐ 4.6 (280 reviews)</span>
+                                <span>👥 3,200+ students</span>
+                            </div>
+                            <div class="course-footer-large">
+                                <span class="course-price">$29</span>
+                                <button class="btn-secondary">Enroll Now</button>
+                            </div>
+                        </div>
+
+                        <div class="course-card-large">
+                            <div class="course-image">🔢</div>
+                            <h3>Advanced Mathematics</h3>
+                            <p>Calculus, algebra, and statistics comprehensive course</p>
+                            <div class="course-details">
+                                <span>👨‍🏫 Prof. Williams</span>
+                                <span>⭐ 4.9 (520 reviews)</span>
+                                <span>👥 1,200+ students</span>
+                            </div>
+                            <div class="course-footer-large">
+                                <span class="course-price">$44</span>
+                                <button class="btn-secondary">Enroll Now</button>
+                            </div>
+                        </div>
+
+                        <div class="course-card-large">
+                            <div class="course-image">🌍</div>
+                            <h3>World History</h3>
+                            <p>Journey through major historical events and periods</p>
+                            <div class="course-details">
+                                <span>👨‍🏫 Prof. Brown</span>
+                                <span>⭐ 4.5 (180 reviews)</span>
+                                <span>👥 900+ students</span>
+                            </div>
+                            <div class="course-footer-large">
+                                <span class="course-price">$34</span>
+                                <button class="btn-secondary">Enroll Now</button>
+                            </div>
+                        </div>
+
+                        <div class="course-card-large">
+                            <div class="course-image">🧪</div>
+                            <h3>Chemistry Fundamentals</h3>
+                            <p>Understand the elements and chemical reactions</p>
+                            <div class="course-details">
+                                <span>👨‍🏫 Dr. Miller</span>
+                                <span>⭐ 4.7 (390 reviews)</span>
+                                <span>👥 1,600+ students</span>
+                            </div>
+                            <div class="course-footer-large">
+                                <span class="course-price">$39</span>
+                                <button class="btn-secondary">Enroll Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>EduHub</h4>
+                    <p>Transforming education through technology.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EduHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('input[type="range"]').addEventListener('input', function() {
+            document.getElementById('priceValue').textContent = this.value;
+        });
+    </script>
+</body>
+</html>
