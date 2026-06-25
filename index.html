@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduHub - Complete School Portal</title>
+    <title>UniCore - University Management System</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <div class="nav-brand">🎓 EduHub</div>
+            <div class="nav-brand">🎓 UniCore</div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="courses.html">Courses</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#admissions">Admissions</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-buttons">
                 <button class="btn-login" onclick="openModal('loginModal')">Login</button>
-                <button class="btn-signup" onclick="openModal('signupModal')">Sign Up</button>
+                <button class="btn-signup" onclick="openModal('signupModal')">Apply Now</button>
             </div>
         </div>
     </nav>
@@ -28,170 +28,166 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Welcome to EduHub</h1>
-            <p>Your Complete School Portal Experience</p>
-            <p class="hero-subtitle">Access courses, track progress, connect with peers, and grow</p>
-            <button class="btn-primary" onclick="openModal('signupModal')">Get Started Now</button>
+            <h1>Welcome to UniCore University</h1>
+            <p>Excellence in Education & Innovation</p>
+            <p class="hero-subtitle">Premier institution offering world-class education and research opportunities</p>
+            <button class="btn-primary" onclick="openModal('signupModal')">Apply for Admission</button>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features">
+    <!-- About Section -->
+    <section id="about" class="about-section">
         <div class="container">
-            <h2>Why Choose EduHub?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📚</div>
-                    <h3>Extensive Courses</h3>
-                    <p>Access 500+ courses from expert instructors across all subjects.</p>
+            <h2>About UniCore University</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">🎆</div>
+                    <h3>Founded 1985</h3>
+                    <p>Over 35 years of academic excellence and innovation</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">👥</div>
-                    <h3>Community Learning</h3>
-                    <p>Connect with thousands of students and collaborate on projects.</p>
+                <div class="about-card">
+                    <div class="about-icon">🌟</div>
+                    <h3>15,000+ Students</h3>
+                    <p>Diverse student body from across the globe</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Progress Tracking</h3>
-                    <p>Monitor your academic progress with detailed analytics and reports.</p>
+                <div class="about-card">
+                    <div class="about-icon">🏆</div>
+                    <h3>500+ Faculty</h3>
+                    <p>Highly qualified and experienced instructors</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🏆</div>
-                    <h3>Earn Certificates</h3>
-                    <p>Complete courses and earn recognized certificates for your portfolio.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⏰</div>
-                    <h3>Flexible Schedule</h3>
-                    <p>Learn at your own pace with 24/7 access to all materials.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Personalized Path</h3>
-                    <p>AI-powered recommendations based on your learning goals.</p>
+                <div class="about-card">
+                    <div class="about-icon">🔜</div>
+                    <h3>Accredited</h3>
+                    <p>Fully accredited by international education bodies</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
+    <!-- Programs Section -->
+    <section id="programs" class="programs-section">
         <div class="container">
-            <div class="stat-card">
-                <h3>50,000+</h3>
-                <p>Active Students</p>
+            <h2>Our Programs</h2>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <h3>🖥️ Engineering</h3>
+                    <ul>
+                        <li>Civil Engineering</li>
+                        <li>Electrical Engineering</li>
+                        <li>Mechanical Engineering</li>
+                        <li>Software Engineering</li>
+                    </ul>
+                </div>
+                <div class="program-card">
+                    <h3>🔬 Science</h3>
+                    <ul>
+                        <li>Physics</li>
+                        <li>Chemistry</li>
+                        <li>Biology</li>
+                        <li>Environmental Science</li>
+                    </ul>
+                </div>
+                <div class="program-card">
+                    <h3>📚 Business</h3>
+                    <ul>
+                        <li>Accounting</li>
+                        <li>Finance</li>
+                        <li>Management</li>
+                        <li>Marketing</li>
+                    </ul>
+                </div>
+                <div class="program-card">
+                    <h3>🎨 Arts & Humanities</h3>
+                    <ul>
+                        <li>Literature</li>
+                        <li>History</li>
+                        <li>Philosophy</li>
+                        <li>Languages</li>
+                    </ul>
+                </div>
             </div>
-            <div class="stat-card">
-                <h3>500+</h3>
-                <p>Available Courses</p>
+        </div>
+    </section>
+
+    <!-- Admissions Section -->
+    <section id="admissions" class="admissions-section">
+        <div class="container">
+            <h2>Admissions Process</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Apply Online</h3>
+                    <p>Fill out the application form with your details</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Submit Documents</h3>
+                    <p>Upload required academic credentials and certificates</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Entrance Exam</h3>
+                    <p>Take the UTME or submit international exam scores</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Interview</h3>
+                    <p>Complete the admissions interview process</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Acceptance</h3>
+                    <p>Receive admission decision and enrollment documents</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">6</div>
+                    <h3>Enrollment</h3>
+                    <p>Complete registration and pay tuition fees</p>
+                </div>
             </div>
-            <div class="stat-card">
-                <h3>100+</h3>
-                <p>Expert Instructors</p>
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stat-box">
+                <h3>98%</h3>
+                <p>Graduation Rate</p>
             </div>
-            <div class="stat-card">
+            <div class="stat-box">
                 <h3>95%</h3>
-                <p>Success Rate</p>
+                <p>Employment Rate</p>
+            </div>
+            <div class="stat-box">
+                <h3>50+</h3>
+                <p>Countries Represented</p>
+            </div>
+            <div class="stat-box">
+                <h3>🌟 4.8/5</h3>
+                <p>Student Satisfaction</p>
             </div>
         </div>
     </section>
 
-    <!-- Popular Courses Preview -->
-    <section class="courses-preview">
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
         <div class="container">
-            <h2>Popular Courses</h2>
-            <div class="courses-grid">
-                <div class="course-card">
-                    <div class="course-image">🖥️</div>
-                    <h3>Web Development</h3>
-                    <p>Learn HTML, CSS, JavaScript, React, and Node.js</p>
-                    <div class="course-footer">
-                        <span class="course-badge">Beginner</span>
-                        <span class="course-students">2.5k students</span>
-                    </div>
+            <h2>Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>📍 Address</h3>
+                    <p>UniCore University Main Campus<br>123 Academic Street<br>Lagos, Nigeria 100001</p>
                 </div>
-                <div class="course-card">
-                    <div class="course-image">🔬</div>
-                    <h3>Physics 101</h3>
-                    <p>Master fundamentals of physics and mechanics</p>
-                    <div class="course-footer">
-                        <span class="course-badge">Intermediate</span>
-                        <span class="course-students">1.8k students</span>
-                    </div>
+                <div class="contact-info">
+                    <h3>📞 Phone</h3>
+                    <p>+234 (1) 234-5678<br>+234 (801) 234-5678</p>
                 </div>
-                <div class="course-card">
-                    <div class="course-image">📖</div>
-                    <h3>English Literature</h3>
-                    <p>Explore classic and contemporary literature</p>
-                    <div class="course-footer">
-                        <span class="course-badge">Beginner</span>
-                        <span class="course-students">3.2k students</span>
-                    </div>
-                </div>
-                <div class="course-card">
-                    <div class="course-image">🔢</div>
-                    <h3>Advanced Mathematics</h3>
-                    <p>Deep dive into calculus, algebra, and statistics</p>
-                    <div class="course-footer">
-                        <span class="course-badge">Advanced</span>
-                        <span class="course-students">1.2k students</span>
-                    </div>
+                <div class="contact-info">
+                    <h3>📧 Email</h3>
+                    <p>admissions@unicore.edu.ng<br>info@unicore.edu.ng</p>
                 </div>
             </div>
-            <div class="text-center">
-                <a href="courses.html" class="btn-primary">View All Courses</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="container">
-            <h2>What Our Students Say</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"EduHub completely transformed my learning experience. The courses are comprehensive and the community is incredibly supportive!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">👨‍🎓</div>
-                        <div>
-                            <h4>John Smith</h4>
-                            <p>Computer Science Student</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"The instructors are experts in their field. I learned more in 3 months here than I did in a whole year elsewhere."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">👩‍🎓</div>
-                        <div>
-                            <h4>Sarah Johnson</h4>
-                            <p>Mathematics Student</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Best investment I made in my education. The certificate helped me get my dream job!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">👨‍💼</div>
-                        <div>
-                            <h4>Mike Davis</h4>
-                            <p>Recent Graduate</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <h2>Ready to Transform Your Education?</h2>
-            <p>Join thousands of students learning on EduHub today</p>
-            <button class="btn-primary" onclick="openModal('signupModal')">Start Free Today</button>
         </div>
     </section>
 
@@ -200,16 +196,15 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h4>EduHub</h4>
-                    <p>Transforming education through technology and innovation.</p>
+                    <h4>🎓 UniCore University</h4>
+                    <p>Leading institution for higher education and research</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="courses.html">Courses</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Student Portal</a></li>
+                        <li><a href="#">Faculty Portal</a></li>
+                        <li><a href="#">Admin Portal</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -217,18 +212,12 @@
                     <div class="social-links">
                         <a href="#">Facebook</a>
                         <a href="#">Twitter</a>
-                        <a href="#">Instagram</a>
                         <a href="#">LinkedIn</a>
                     </div>
                 </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>Email: info@eduhub.com</p>
-                    <p>Phone: +1 (555) 123-4567</p>
-                </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 EduHub. All rights reserved.</p>
+                <p>&copy; 2024 UniCore University. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -237,13 +226,18 @@
     <div id="loginModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('loginModal')">&times;</span>
-            <h2>Student Login</h2>
+            <h2>Portal Login</h2>
+            <div class="role-selector">
+                <button class="role-btn active" onclick="selectRole('student')">Student</button>
+                <button class="role-btn" onclick="selectRole('faculty')">Faculty</button>
+                <button class="role-btn" onclick="selectRole('admin')">Admin</button>
+            </div>
             <form id="loginForm">
-                <input type="email" placeholder="Email Address" required>
+                <input type="text" placeholder="Matric Number / Staff ID" required>
                 <input type="password" placeholder="Password" required>
                 <button type="submit" class="btn-primary">Login</button>
             </form>
-            <p>Don't have an account? <a href="#" onclick="switchModal('loginModal', 'signupModal')">Sign up here</a></p>
+            <p class="forgot-password"><a href="#">Forgot Password?</a></p>
         </div>
     </div>
 
@@ -251,19 +245,26 @@
     <div id="signupModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal('signupModal')">&times;</span>
-            <h2>Create Your Account</h2>
+            <h2>Apply for Admission</h2>
             <form id="signupForm">
                 <input type="text" placeholder="Full Name" required>
                 <input type="email" placeholder="Email Address" required>
-                <input type="password" placeholder="Password" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <select required>
+                    <option>-- Select Program --</option>
+                    <option>Civil Engineering</option>
+                    <option>Software Engineering</option>
+                    <option>Business Administration</option>
+                    <option>Computer Science</option>
+                </select>
+                <input type="password" placeholder="Create Password" required>
                 <input type="password" placeholder="Confirm Password" required>
                 <label><input type="checkbox" required> I agree to the Terms & Conditions</label>
-                <button type="submit" class="btn-primary">Sign Up</button>
+                <button type="submit" class="btn-primary">Apply Now</button>
             </form>
-            <p>Already have an account? <a href="#" onclick="switchModal('signupModal', 'loginModal')">Login here</a></p>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

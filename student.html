@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal - UniCore University</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">🎓 UniCore</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <span class="user-name">Welcome, Chukwu Adekunle</span>
+                <button class="btn-logout" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="user-profile">
+                <div class="user-avatar">👨‍🎓</div>
+                <h3>Chukwu Adekunle</h3>
+                <p>Mat: 2022/001234</p>
+                <p>Civil Engineering</p>
+            </div>
+            <nav class="dashboard-nav">
+                <a href="#" class="nav-item active" onclick="switchTab('dashboard')">📊 Dashboard</a>
+                <a href="#" class="nav-item" onclick="switchTab('courses')">📚 My Courses</a>
+                <a href="#" class="nav-item" onclick="switchTab('grades')">📈 Grades</a>
+                <a href="#" class="nav-item" onclick="switchTab('attendance')">✓ Attendance</a>
+                <a href="#" class="nav-item" onclick="switchTab('fees')">💰 Fees & Billing</a>
+                <a href="#" class="nav-item" onclick="switchTab('transcript')">📄 Transcript</a>
+                <a href="#" class="nav-item" onclick="switchTab('schedule')">📅 Schedule</a>
+                <a href="#" class="nav-item" onclick="switchTab('library')">📚 Library</a>
+                <a href="#" class="nav-item" onclick="switchTab('profile')">⚙️ Profile</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Dashboard Tab -->
+            <div id="dashboard" class="tab-content active">
+                <h1>Dashboard</h1>
+                <div class="welcome-card">
+                    <h2>Welcome Back, Chukwu! 👋</h2>
+                    <p>You're in your 2nd Year of Civil Engineering</p>
+                </div>
+
+                <div class="quick-stats">
+                    <div class="stat-card">
+                        <h3>3.75</h3>
+                        <p>Current GPA</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>95%</h3>
+                        <p>Attendance Rate</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>₦450,000</h3>
+                        <p>Fees Outstanding</p>
+                        <a href="#" onclick="switchTab('fees')" class="text-danger">Pay Now</a>
+                    </div>
+                    <div class="stat-card">
+                        <h3>5</h3>
+                        <p>Active Courses</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-section">
+                    <h2>Current Courses</h2>
+                    <div class="courses-list">
+                        <div class="course-item">
+                            <div class="course-info">
+                                <h3>Structural Analysis II</h3>
+                                <p>Dr. Ngozi Okafor | MWF 9:00 AM - 10:30 AM</p>
+                            </div>
+                            <div class="course-status">Grade: A- (3.7)</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-info">
+                                <h3>Fluid Mechanics</h3>
+                                <p>Prof. James Adeyemi | TTh 2:00 PM - 3:30 PM</p>
+                            </div>
+                            <div class="course-status">Grade: B+ (3.3)</div>
+                        </div>
+                        <div class="course-item">
+                            <div class="course-info">
+                                <h3>Construction Management</h3>
+                                <p>Engr. Amaka Obi | MW 1:00 PM - 2:30 PM</p>
+                            </div>
+                            <div class="course-status">Grade: A (4.0)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-section">
+                    <h2>Announcements</h2>
+                    <div class="announcements">
+                        <div class="announcement">
+                            <span class="announcement-date">Today</span>
+                            <h4>Final Exams Schedule Released</h4>
+                            <p>The final examination schedule has been released. Check your portal for details.</p>
+                        </div>
+                        <div class="announcement">
+                            <span class="announcement-date">Yesterday</span>
+                            <h4>Library Extended Hours</h4>
+                            <p>The library will remain open until 10 PM during examination period.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Courses Tab -->
+            <div id="courses" class="tab-content">
+                <h1>My Courses</h1>
+                <div class="courses-detailed">
+                    <div class="course-card-detailed">
+                        <div class="course-header-detailed">
+                            <h3>Structural Analysis II</h3>
+                            <span class="course-code">CEE 302</span>
+                        </div>
+                        <p><strong>Instructor:</strong> Dr. Ngozi Okafor</p>
+                        <p><strong>Credits:</strong> 3 Units</p>
+                        <p><strong>Schedule:</strong> MWF 9:00 AM - 10:30 AM</p>
+                        <p><strong>Venue:</strong> Engineering Building, Room 301</p>
+                        <button class="btn-secondary">View Materials</button>
+                    </div>
+                    <div class="course-card-detailed">
+                        <div class="course-header-detailed">
+                            <h3>Fluid Mechanics</h3>
+                            <span class="course-code">CEE 304</span>
+                        </div>
+                        <p><strong>Instructor:</strong> Prof. James Adeyemi</p>
+                        <p><strong>Credits:</strong> 4 Units</p>
+                        <p><strong>Schedule:</strong> TTh 2:00 PM - 3:30 PM</p>
+                        <p><strong>Venue:</strong> Engineering Building, Room 205</p>
+                        <button class="btn-secondary">View Materials</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grades Tab -->
+            <div id="grades" class="tab-content">
+                <h1>Academic Grades</h1>
+                <div class="grades-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Course Code</th>
+                                <th>Course Title</th>
+                                <th>Instructor</th>
+                                <th>CA (30%)</th>
+                                <th>Exam (70%)</th>
+                                <th>Total</th>
+                                <th>Grade</th>
+                                <th>Point</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>CEE 302</td>
+                                <td>Structural Analysis II</td>
+                                <td>Dr. Ngozi Okafor</td>
+                                <td>28/30</td>
+                                <td>68/70</td>
+                                <td>96/100</td>
+                                <td>A</td>
+                                <td>4.0</td>
+                            </tr>
+                            <tr>
+                                <td>CEE 304</td>
+                                <td>Fluid Mechanics</td>
+                                <td>Prof. James Adeyemi</td>
+                                <td>26/30</td>
+                                <td>62/70</td>
+                                <td>88/100</td>
+                                <td>B+</td>
+                                <td>3.3</td>
+                            </tr>
+                            <tr>
+                                <td>CEE 306</td>
+                                <td>Construction Management</td>
+                                <td>Engr. Amaka Obi</td>
+                                <td>29/30</td>
+                                <td>71/70</td>
+                                <td>100/100</td>
+                                <td>A+</td>
+                                <td>4.0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Attendance Tab -->
+            <div id="attendance" class="tab-content">
+                <h1>Attendance Record</h1>
+                <div class="attendance-summary">
+                    <div class="attendance-stat">
+                        <h3>95%</h3>
+                        <p>Overall Attendance</p>
+                    </div>
+                </div>
+                <div class="attendance-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Course</th>
+                                <th>Total Classes</th>
+                                <th>Present</th>
+                                <th>Absent</th>
+                                <th>Percentage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Structural Analysis II</td>
+                                <td>30</td>
+                                <td>29</td>
+                                <td>1</td>
+                                <td>96.7%</td>
+                            </tr>
+                            <tr>
+                                <td>Fluid Mechanics</td>
+                                <td>28</td>
+                                <td>26</td>
+                                <td>2</td>
+                                <td>92.9%</td>
+                            </tr>
+                            <tr>
+                                <td>Construction Management</td>
+                                <td>25</td>
+                                <td>25</td>
+                                <td>0</td>
+                                <td>100%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Fees & Billing Tab -->
+            <div id="fees" class="tab-content">
+                <h1>Fees & Billing</h1>
+                <div class="fees-summary">
+                    <div class="fee-card outstanding">
+                        <h3>Outstanding Balance</h3>
+                        <p class="amount">₦450,000</p>
+                        <p>Due: 2024-06-30</p>
+                    </div>
+                    <div class="fee-card paid">
+                        <h3>Amount Paid</h3>
+                        <p class="amount">₦1,050,000</p>
+                        <p>Out of ₦1,500,000</p>
+                    </div>
+                </div>
+
+                <div class="fees-breakdown">
+                    <h2>2024/2025 Academic Session - Tuition Breakdown</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                                <th>Amount (₦)</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tuition Fee</td>
+                                <td>900,000</td>
+                                <td><span class="badge paid">PAID</span></td>
+                            </tr>
+                            <tr>
+                                <td>Registration Fee</td>
+                                <td>100,000</td>
+                                <td><span class="badge paid">PAID</span></td>
+                            </tr>
+                            <tr>
+                                <td>Accommodation Fee</td>
+                                <td>200,000</td>
+                                <td><span class="badge paid">PAID</span></td>
+                            </tr>
+                            <tr>
+                                <td>Laboratory Fee</td>
+                                <td>150,000</td>
+                                <td><span class="badge pending">PENDING</span></td>
+                            </tr>
+                            <tr>
+                                <td>Student Development Fee</td>
+                                <td>100,000</td>
+                                <td><span class="badge pending">PENDING</span></td>
+                            </tr>
+                            <tr>
+                                <td>Technology Fee</td>
+                                <td>50,000</td>
+                                <td><span class="badge pending">PENDING</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="payment-section">
+                    <h2>Make Payment</h2>
+                    <div class="payment-options">
+                        <div class="payment-card">
+                            <h3>💳 Pay with Remita</h3>
+                            <p>Quick and secure payment gateway</p>
+                            <input type="number" placeholder="Enter Amount (₦)" id="paymentAmount" value="450000">
+                            <button class="btn-primary" onclick="initiateRemitaPayment()">Pay Now via Remita</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-payments">
+                    <h2>Payment History</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Description</th>
+                                <th>Amount (₦)</th>
+                                <th>Reference</th>
+                                <th>Invoice</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2024-05-15</td>
+                                <td>Tuition Payment</td>
+                                <td>900,000</td>
+                                <td>REM123456789</td>
+                                <td><a href="#" onclick="generateInvoice('INV-2024-001')">View</a></td>
+                            </tr>
+                            <tr>
+                                <td>2024-04-20</td>
+                                <td>Registration + Accommodation</td>
+                                <td>300,000</td>
+                                <td>REM987654321</td>
+                                <td><a href="#" onclick="generateInvoice('INV-2024-002')">View</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Transcript Tab -->
+            <div id="transcript" class="tab-content">
+                <h1>Academic Transcript</h1>
+                <button class="btn-primary" onclick="downloadTranscript()">📥 Download Transcript</button>
+                <div class="transcript-preview">
+                    <h2>Official Academic Transcript - 2023/2024</h2>
+                    <div class="transcript-info">
+                        <p><strong>Name:</strong> Chukwu Adekunle</p>
+                        <p><strong>Matric No:</strong> 2022/001234</p>
+                        <p><strong>Program:</strong> Civil Engineering (B.Eng.)</p>
+                        <p><strong>Level:</strong> 200</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Schedule Tab -->
+            <div id="schedule" class="tab-content">
+                <h1>Class Schedule</h1>
+                <div class="schedule-grid">
+                    <div class="schedule-day">
+                        <h3>Monday</h3>
+                        <div class="schedule-item">
+                            <p><strong>Structural Analysis II</strong><br>9:00 AM - 10:30 AM<br>Eng. Bldg, Room 301</p>
+                        </div>
+                        <div class="schedule-item">
+                            <p><strong>Construction Management</strong><br>1:00 PM - 2:30 PM<br>Eng. Bldg, Room 201</p>
+                        </div>
+                    </div>
+                    <div class="schedule-day">
+                        <h3>Tuesday</h3>
+                        <div class="schedule-item">
+                            <p><strong>Fluid Mechanics</strong><br>2:00 PM - 3:30 PM<br>Eng. Bldg, Room 205</p>
+                        </div>
+                    </div>
+                    <div class="schedule-day">
+                        <h3>Wednesday</h3>
+                        <div class="schedule-item">
+                            <p><strong>Structural Analysis II</strong><br>9:00 AM - 10:30 AM<br>Eng. Bldg, Room 301</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Library Tab -->
+            <div id="library" class="tab-content">
+                <h1>Library Services</h1>
+                <div class="library-info">
+                    <div class="library-card">
+                        <h3>📚 Books Borrowed</h3>
+                        <p class="number">3</p>
+                        <p>Due: 2024-07-15</p>
+                    </div>
+                    <div class="library-card">
+                        <h3>⚠️ Overdue Books</h3>
+                        <p class="number">0</p>
+                        <p>No overdue items</p>
+                    </div>
+                    <div class="library-card">
+                        <h3>🔖 Library Account</h3>
+                        <p class="number">Active</p>
+                        <p>Borrowing Limit: 10 books</p>
+                    </div>
+                </div>
+
+                <div class="borrowed-books">
+                    <h2>Borrowed Books</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Book Title</th>
+                                <th>Author</th>
+                                <th>Borrowed Date</th>
+                                <th>Due Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Structural Analysis</td>
+                                <td>R.C. Hibbeler</td>
+                                <td>2024-06-01</td>
+                                <td>2024-07-15</td>
+                                <td><span class="badge success">Active</span></td>
+                            </tr>
+                            <tr>
+                                <td>Fluid Mechanics Fundamentals</td>
+                                <td>B.R. Munson</td>
+                                <td>2024-06-05</td>
+                                <td>2024-07-20</td>
+                                <td><span class="badge success">Active</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Profile Tab -->
+            <div id="profile" class="tab-content">
+                <h1>Profile Settings</h1>
+                <div class="profile-form">
+                    <h2>Personal Information</h2>
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" value="Chukwu Adekunle">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" value="chukwu.adekunle@unicore.edu.ng">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="tel" value="+234 (801) 234-5678">
+                    </div>
+                    <div class="form-group">
+                        <label>Matric Number</label>
+                        <input type="text" value="2022/001234" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label>Program</label>
+                        <input type="text" value="Civil Engineering" disabled>
+                    </div>
+                    <button class="btn-primary">Save Changes</button>
+                    <button class="btn-secondary" style="margin-left: 10px;">Change Password</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Invoice Modal -->
+    <div id="invoiceModal" class="modal">
+        <div class="modal-content large">
+            <span class="close" onclick="closeModal('invoiceModal')">&times;</span>
+            <div id="invoiceContent" class="invoice-content">
+                <!-- Invoice will be rendered here -->
+            </div>
+            <button class="btn-primary" onclick="printInvoice()">🖨️ Print Invoice</button>
+            <button class="btn-secondary" onclick="downloadInvoicePDF()">📥 Download PDF</button>
+        </div>
+    </div>
+
+    <script src="student.js"></script>
+    <script src="https://remita.net/payment/pay.js"></script>
+</body>
+</html>
